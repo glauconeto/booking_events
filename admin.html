@@ -31,38 +31,42 @@
       </div>
     </div>
   </nav>
-  <div class="m-5">
-    <div class="py-4 m-5">
-      <div class="row">
-        <div class="col-md-12">
-          <h3>Login de administrador</h3>
+  <main>
+    <section>
+      <div class="m-5">
+        <div class="py-4 m-5">
+          <div class="row">
+            <div class="col-md-12">
+              <h3>Login de administrador</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <form class="p-3">
+                <div class="form-group">
+                  <label for="email"></label> Endereço de E-mail:</label>
+                  <input type="email" class="form-control" id="emailInput">
+                </div>
+                <div class="form-group">
+                  <label for="password">Senha</label>
+                  <input type="password" class="form-control" id="passwdInput">
+                </div>
+                <button type="submit" class="mt-4 btn btn-primary" id="authEmailButton">Entrar</button>
+                <div class="container">
+                  <p class="mt-3">Não tem uma conta:</p>
+                  <button type="button" id="createUserButton" class="btn btn-primary btn-block mb-4">Criar conta</button>
+                  <p>Ou você pode entrar com:</p>
+                  <button type="button" id="authGoogleButton" class="btn btn-link btn-floating mx-1">
+                    <p>Conta Google</p><i class="bi bi-google"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-12">
-          <form class="p-3">
-            <div class="form-group">
-              <label for="email"></label> Endereço de E-mail:</label>
-              <input type="email" class="form-control" id="emailInput">
-            </div>
-            <div class="form-group">
-              <label for="password">Senha</label>
-              <input type="password" class="form-control" id="passwdInput">
-            </div>
-            <button type="submit" class="mt-4 btn btn-primary" id="authEmailButton">Entrar</button>
-            <div class="container">
-              <p class="mt-3">Não tem uma conta:</p>
-              <button type="button" id="createUserButton" class="btn btn-primary btn-block mb-4">Criar conta</button>
-              <p>Ou você pode entrar com:</p>
-              <button type="button" id="authGoogleButton" class="btn btn-link btn-floating mx-1">
-                <p>Conta Google</p><i class="bi bi-google"></i>
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
+    </section>
+  </main>
   <footer>
     <div class="py-3">
       <div class="container">
