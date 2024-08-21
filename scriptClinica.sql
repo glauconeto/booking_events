@@ -1,3 +1,5 @@
+-- Criação de tabelas e suas relações.
+
 CREATE TABLE `usuario` (
 	`id` INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`nome` VARCHAR(100),
