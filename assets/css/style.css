@@ -11,6 +11,11 @@ html,
 body,
 .intro {
   height: 100%;
+  background-color: #C7C8CC;
+}
+
+navbar.picton {
+  background-color: #65B3D7;
 }
 
 table td,
