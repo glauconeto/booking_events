@@ -14,7 +14,7 @@ body,
   background-color: #C7C8CC;
 }
 
-navbar.picton {
+nav.picton {
   background-color: #65B3D7;
 }
 
@@ -41,4 +41,8 @@ table th {
 main > section.intro {
   margin-top: 5rem;
   display: grid;
+}
+
+footer.ghost {
+  background-color: #F4F4F9;
 }
