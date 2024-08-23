@@ -46,3 +46,14 @@ main > section.intro {
 footer.ghost {
   background-color: #F4F4F9;
 }
+
+main.control-size {
+  padding: 5em;
+  width: 70%;
+  margin: 0 18vh 0 10vh;
+  text-align: justify;
+}
+
+input.form-input {
+  width: 50%;
+}
