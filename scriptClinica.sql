@@ -12,15 +12,14 @@ CREATE TABLE `agendamento` (
 	`nome` VARCHAR(70) NOT NULL,
 	`telefone` VARCHAR(20) NOT NULL,
 	`dataHora` TIMESTAMP NOT NULL,
+	`procedimento` VARCHAR(50) NOT NULL,
 	`idAdministrador` INTEGER,
-	PRIMARY KEY(`id`)
 );
 
 CREATE TABLE `administrador` (
 	`id` INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	`email` VARCHAR(255) NOT NULL,
 	`senha` VARCHAR(255) NOT NULL,
-	PRIMARY KEY(`id`)
 );
 
 CREATE TABLE `informações usuario` (
@@ -29,7 +28,6 @@ CREATE TABLE `informações usuario` (
 	`dataNascimento` DATE,
 	`usId` INTEGER,
 	`descricao` VARCHAR(255),
-	PRIMARY KEY(`id`)
 );
 
 CREATE TABLE `preco` (
@@ -37,7 +35,6 @@ CREATE TABLE `preco` (
 	`nomeProcedimento` VARCHAR(100),
 	`preco` DECIMAL(6, 2),
 	`descricao` TEXT(100),
-	PRIMARY KEY(`id`)
 );
 
 ALTER TABLE `administrador`

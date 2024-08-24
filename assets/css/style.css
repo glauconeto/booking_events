@@ -29,15 +29,6 @@ table th {
   border-radius: .5rem;
 }
 
-.mask-custom {
-  background: rgba(24, 24, 16, .2);
-  border-radius: 2em;
-  backdrop-filter: blur(25px);
-  border: 2px solid rgba(255, 255, 255, 0.05);
-  background-clip: padding-box;
-  box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
-}
-
 main > section.intro {
   margin-top: 5rem;
   display: grid;
@@ -45,15 +36,23 @@ main > section.intro {
 
 footer.ghost {
   background-color: #F4F4F9;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 
 main.control-size {
   padding: 5em;
   width: 70%;
-  margin: 0 18vh 0 10vh;
+  margin: 0 18vh 0 50vh;
   text-align: justify;
 }
 
 input.form-input {
   width: 50%;
+}
+
+select.form-select {
+  width: 45%;
 }
