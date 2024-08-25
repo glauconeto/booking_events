@@ -1,5 +1,4 @@
 -- Criação de tabelas e suas relações.
-
 CREATE TABLE pacientes (
     paciente_id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -9,19 +8,6 @@ CREATE TABLE pacientes (
     endereco TEXT
 );
 
-CREATE TABLE procedimentos (
-    procedimento_id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    descricao TEXT,
-    preco DECIMAL(10, 2) NOT NULL
-);
-
-CREATE TABLE procedimentos (
-    procedimento_id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    descricao TEXT,
-    preco DECIMAL(10, 2) NOT NULL
-);
 
 CREATE TABLE administradores (
     admin_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -30,6 +16,26 @@ CREATE TABLE administradores (
     senha VARCHAR(255) NOT NULL,  -- Certifique-se de usar hashing para armazenar senhas
     email VARCHAR(100) UNIQUE
 );
+
+
+CREATE TABLE agendamentos (
+    agendamento_id INT AUTO_INCREMENT PRIMARY KEY,
+    paciente_id INT,
+    procedimento_id INT,
+    data_hora DATETIME NOT NULL,
+    observacoes TEXT,
+    FOREIGN KEY (paciente_id) REFERENCES pacientes(paciente_id),
+    FOREIGN KEY (procedimento_id) REFERENCES procedimentos(procedimento_id)
+);
+
+
+CREATE TABLE procedimentos (
+    procedimento_id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    descricao TEXT,
+    preco DECIMAL(10, 2) NOT NULL
+);
+
 
 CREATE TABLE historico_agendamentos (
     historico_id INT AUTO_INCREMENT PRIMARY KEY,
