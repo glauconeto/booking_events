@@ -7,6 +7,10 @@ section.full-center {
     display: flex;
 }
 
+body {
+  background-color: #C7C8CC;
+}
+
 html,
 body,
 .intro {
