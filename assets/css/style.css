@@ -25,6 +25,19 @@ table th {
   overflow: hidden;
 }
 
+img.w-100 {
+  height: 72vh;
+}
+
+img.carg-cust-img {
+  width: 100%;
+  height: 40vh;
+}
+
+img.card-clinic {
+  height: 60vh;
+}
+
 .card {
   border-radius: .5rem;
 }
