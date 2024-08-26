@@ -2,7 +2,7 @@
 
 
 -- Calcular Total de Procedimentos Agendados por Mês.
--- Esta stored procedure calcula o total de valores de procedimentos agendados em um mês específico.
+-- Calcula o total de valores de procedimentos agendados em um mês específico.
 DELIMITER //
 
 CREATE PROCEDURE calcular_total_mensal(IN mes INT, IN ano INT, OUT total DECIMAL(10, 2))
@@ -17,7 +17,7 @@ DELIMITER ;
 
 
 -- Adicionar Novo Procedimento
--- Esta stored procedure adiciona um novo procedimento com um nome, descrição e preço especificado.
+-- Adiciona um novo procedimento com um nome, descrição e preço especificado.
 DELIMITER //
 
 CREATE PROCEDURE adicionar_procedimento(
@@ -34,7 +34,7 @@ DELIMITER ;
 
 
 -- Atualizar Preço de Procedimento
--- Esta stored procedure atualiza o preço de um procedimento específico.
+-- Atualiza o preço de um procedimento específico.
 DELIMITER //
 
 CREATE PROCEDURE atualizar_preco_procedimento(
@@ -48,6 +48,29 @@ BEGIN
 END //
 
 DELIMITER ;
+
+-- Remove agendamento
+-- Exclui um agendamento e também remove o histórico associado a ele.
+DELIMITER //
+
+CREATE PROCEDURE remover_agendamento(IN p_agendamento_id INT)
+BEGIN
+    START TRANSACTION;
+
+    -- Remove o histórico de agendamento relacionado
+    DELETE FROM historico_agendamentos
+    WHERE agendamento_id = p_agendamento_id;
+
+    -- Remove o agendamento
+    DELETE FROM agendamentos
+    WHERE agendamento_id = p_agendamento_id;
+
+    -- Confirma a transação
+    COMMIT;
+END //
+
+DELIMITER ;
+
 
 -- Triggers a serem disparados no banco.
 -- Trigger para Atualizar Histórico Quando um Agendamento é Inserido
@@ -127,7 +150,7 @@ BEGIN
         GROUP BY paciente_id;
     DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
     
-    -- Abrir o cursor
+    -- Abre o cursor
     OPEN cur;
     
     -- Iterar sobre o cursor

@@ -1,4 +1,5 @@
 -- Criação de tabelas e suas relações.
+-- Tabela para pacientes.
 CREATE TABLE pacientes (
     paciente_id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -8,7 +9,7 @@ CREATE TABLE pacientes (
     endereco TEXT
 );
 
-
+-- Tabela para os administradores, como donos da clínica.
 CREATE TABLE administradores (
     admin_id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100),
@@ -17,7 +18,7 @@ CREATE TABLE administradores (
     email VARCHAR(100) UNIQUE
 );
 
-
+-- Tabela para os agendamentos.
 CREATE TABLE agendamentos (
     agendamento_id INT AUTO_INCREMENT PRIMARY KEY,
     paciente_id INT,
@@ -28,7 +29,7 @@ CREATE TABLE agendamentos (
     FOREIGN KEY (procedimento_id) REFERENCES procedimentos(procedimento_id)
 );
 
-
+-- Tabela de procedimentos
 CREATE TABLE procedimentos (
     procedimento_id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -36,7 +37,7 @@ CREATE TABLE procedimentos (
     preco DECIMAL(10, 2) NOT NULL
 );
 
-
+-- Tabela do histórico de agendamentos
 CREATE TABLE historico_agendamentos (
     historico_id INT AUTO_INCREMENT PRIMARY KEY,
     agendamento_id INT,
